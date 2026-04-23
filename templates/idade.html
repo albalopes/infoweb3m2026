@@ -6,10 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        {% for i in itens %}
-            <li>{{i}}</li>
-        {% endfor %}
-    </ul>
+
+    {% if idade >= 18 %}
+        <h2>Vocé é MAIOR de idade</h2>
+    
+    {% else %}
+        <h2>Vocé é MENOR de idade</h2>
+    {% endif %}
+    <h3>Você tem {{idade}} anos</h3>
+    
 </body>
 </html>

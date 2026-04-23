@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <h3>Meus Produtos ({{qtd}})</h3>
+    
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+        </tr>
+        {% for i in itens %}
+            <tr>
+                <td>{{i.nome}}</td>
+                <td>{{i.preco}}</td>
+                <td>{{i.categoria}}</td>
+            </tr>
+        {% endfor %}
+    
+    </table>
+
+    {% for i in itens %}
+        <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+            <img class="max-w-[200px]"
+            src="{{i.imagem}}"
+            alt="Shoes" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title">{{i.nome}}</h2>
+            <p> Preço: {{i.preco}}</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    
+</body>
+</html>
